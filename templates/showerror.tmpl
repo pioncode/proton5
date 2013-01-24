@@ -1,0 +1,10 @@
+[% PROCESS templates/header.tmpl title = 'ERROR' %]
+
+[% msg IF msg %]<br />
+
+[% IF debug %]
+    <div class="debug">[% debug %]</div>
+[% END %]
+
+
+[% PROCESS templates/footer.tmpl %]

@@ -1,0 +1,52 @@
+[% PROCESS templates/header.tmpl title = current.title %]
+
+<div id="header-region"></div>               <!-- puts a space at top -->
+<div id="wrapper">                           <!-- Wrapper is overall area containing everything else -->
+    <div id="container" class="clear-block"> <!-- container is subarea of wrapper which doesn't include dead space on left and right. -->
+                                             <!--"clear-block" makes block clear float -->
+        [% PROCESS templates/_headerstuff.tmpl %]
+        <div id="sidebar-left" class="sidebar">
+            <div class="clear-block block block-user">
+            <!--<div id="block-user-1" class="clear-block block block-user"> --><!-- not sure what user bit does (nothing on layout?), block (with content) has small margin -->
+                [% PROCESS templates/_tree.tmpl %]
+            </div>
+        </div>
+        <div id="center"> <!-- the following divs are all descendent -->
+            <div id="squeeze">
+                <div class="right-corner">
+                    <div class="left-corner">
+                        <div class="clear-block">
+                            <div id="node-5" class="node"> <!-- this puts a line under the text (same colour as background), giving the impression that the block is separated in two-->
+
+                                <h1 class="cont_header">Search results</h1>
+<div id="cse-search-results"></div>
+<script type="text/javascript">
+  var googleSearchIframeName = "cse-search-results";
+  var googleSearchFormName = "cse-search-box";
+  var googleSearchFrameWidth = 600;
+  var googleSearchDomain = "www.google.com";
+  var googleSearchPath = "/cse";
+</script>
+<script type="text/javascript" src="http://www.google.com/afsonline/show_afs_search.js"></script>
+
+
+                            </div>
+                            
+                            <img src="/stylesheets/images/pionlogo2.png" alt="Pion logo"/>a <a href="http://www.pion.co.uk">Pion</a> publication
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sidebar-right" class="sidebar">
+            <div class="clear-block block block-user">  <!--removed id=block-user-1-->
+                <div id="scrollmenu" style="position:absolute">
+                    [% PROCESS templates/_resources.tmpl %]
+                    [% PROCESS templates/_journals.tmpl %]
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+[% PROCESS templates/footer.tmpl %]

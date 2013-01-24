@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+    <title>i-Perception</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link type="text/css" rel="stylesheet" media="all"   href="/stylesheets/defaults.css" />    <!-- takes care of clearing floats -->
+    <link type="text/css" rel="stylesheet" media="all"   href="/stylesheets/system-menus.css" /><!-- affects colours of active menu links -->
+    <link type="text/css" rel="stylesheet" media="all"   href="/stylesheets/style.css" />       <!-- takes care of main style issues -->
+    <link type="text/css" rel="stylesheet" media="print" href="/stylesheets/print.css" /> 
+    <script type="text/javascript">
+        function show_div( div_id, style ) {
+            // get current display style
+            current = document.getElementById(div_id).style.display;
+            style = style ? style : 'block'
+            // show or hide the requested div
+            document.getElementById(div_id).style.display = ( current == style ) ? 'none' : style;
+        }
+    </script>
+    <style>
+        a.ask { display:block;font-weight:bold;margin:4px 0 4px 0; }
+        div.issn { display:inline;padding:0 26px 0 0;position:absolute;right:0; }
+        div.faq_item { border-top:3px solid #13A7FF;border-bottom:3px solid #13A7FF;margin:3px 5px 3px 5px;background-color:#F0F0F0;padding:3px 3px 7px 3px; }
+    </style>
+</head>
+<body class="sidebars" [% IF show %] onLoad="show_div('faq[% show %]');" [% END %] >
+
+<div id="header-region"></div>
+<div id="wrapper">
+    <div id="container" class="clear-block">
+        [% PROCESS templates/_headerstuff.tmpl %]
+        <div id="sidebar-left" class="sidebar">
+            <div id="block-user-1" class="clear-block block block-user">
+                [% PROCESS templates/_tree.tmpl %]            
+           </div>
+        </div>
+        <div id="center">
+            <div id="squeeze">
+                <div class="right-corner">
+                    <div class="left-corner">
+                        <div class="clear-block">
+                            <div id="node-5" class="node">
+                                <h4>Learn more about <nobr><i>i-Perception</i></nobr></h4>
+                                <div class="issn">ISSN 2041-6695 (online)</div>
+                                <div id="faqs">
+                                    <a href="#" class="ask" onClick="show_div('faq01'); return false;">Tile 1</a>
+                                    <div id="faq01" class="faq_item" style="display:none;">
+                                       Text
+                                    </div>
+                                  <a href="#" class="ask" onClick="show_div('faq02'); return false;">Title 2</a>
+                                    <div id="faq02" class="faq_item" style="display:none;">
+				       More text
+                                    </div>
+                                   
+                                    <a href="http://www.perceptionweb.com/" class="ask">Visit the <img src="http://www.perceptionweb.com/i-perception/Images/perception.png" alt="perception" align="bottom"> website</a>
+                                </div>
+                            </div>
+                            <img src="/stylesheets/images/pionlogo2.png">a <a href="http://www.pion.co.uk">Pion</a> publication
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sidebar-right" class="sidebar">
+            <div id="block-user-1" class="clear-block block block-user">
+                <span id="scrollmenu" style="position:absolute">
+                    [% PROCESS templates/_resources.tmpl %]
+                    [% PROCESS templates/_journals.tmpl %]
+
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

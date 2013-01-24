@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+    <title>[% title or '' %]</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="citation_journal_title" content="i-Perception">
+    <meta name="citation_authors" content="[% FOREACH item_a IN article.authors %][% item_a.last_name %], [% item_a.first_name %]; [% END %]">
+    <meta name="citation_title" content="[% article.title %]">
+    <meta name="citation_date" content="[% article.year %]">
+    <meta name="citation_volume" content="[% article.volume %]">
+    <meta name="citation_issue" content="[% article.issue %]">
+    <meta name="citation_firstpage" content="[% article.start_page %]">
+    <meta name="citation_lastpage" content="[% article.end_page %]">
+    <meta name="citation_doi" content="[% article.doi %]">
+
+    [% IF article.pdf %]
+    <meta name="citation_pdf_url" content="http://i-perception.perceptionweb.com[% article.pdf %]">
+    <!--For Facebook to display the correct icon in its tag-->
+    <meta property="og:title" content="[% title or '' %]"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:image" content="http://i-perception.perceptionweb.com/Images/iplogo--twitter.png"/>
+    [% END %]
+    <meta name="citation_abstract_html_url" content="http://i-perception.perceptionweb.com/journal/I/article/[% article.paperid %]">
+    <!--<meta name="citation_fulltext_html_url"
+    content="">  -->
+    [% FOREACH item_a IN article.authors %]
+    <meta name="dc.Contributor" content="[% item_a.last_name %], [% item_a.first_name %]">[% END %]
+    <meta name="dc.Title" content="[% article.title %]">
+    <meta name="dc.Date" content="[% article.year %]">
+    <meta name="citation_publisher" content="Pion Ltd">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link type="text/css" rel="stylesheet" media="all"   href="/stylesheets/defaults.css" />    <!-- takes care of clearing floats -->
+    <link type="text/css" rel="stylesheet" media="all"   href="/stylesheets/system-menus.css" /><!-- affects colours of active menu links -->
+    <link type="text/css" rel="stylesheet" media="all"   href="/stylesheets/style.css" />       <!-- takes care of main style issues -->
+    <link type="text/css" rel="stylesheet" media="print" href="/stylesheets/print.css" /> 
+    <link type="application/rss+xml" title="Pion RSS feed" rel="alternate" href="/rss.cgi?journal=I">
+    <!--Comment box-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/comment/jquery.easy-comment.js"></script>
+
+      <script type="text/javascript">
+
+      jQuery(document).ready(function(){
+
+         $("#comment_[%article.paperid%]").EasyComment({
+            path:"/comment/",
+            moderate:true,
+            maxReply:25
+         });
+      });
+      </script>
+
+
+</head>
+<body class="sidebars"> <!-- without this everything would be left-aligned -->
+

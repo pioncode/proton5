@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+    <title>i-Perception</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link type="text/css" rel="stylesheet" media="all"   href="/stylesheets/defaults.css" />    <!-- takes care of clearing floats -->
+    <link type="text/css" rel="stylesheet" media="all"   href="/stylesheets/system-menus.css" /><!-- affects colours of active menu links -->
+    <link type="text/css" rel="stylesheet" media="all"   href="/stylesheets/style.css" />       <!-- takes care of main style issues -->
+    <link type="text/css" rel="stylesheet" media="print" href="/stylesheets/print.css" /> 
+    <script type="text/javascript">
+        function show_div( div_id, style ) {
+            // get current display style
+            current = document.getElementById(div_id).style.display;
+            style = style ? style : 'block'
+            // show or hide the requested div
+            document.getElementById(div_id).style.display = ( current == style ) ? 'none' : style;
+        }
+    </script>
+    <style>
+        a.ask { display:block;font-weight:bold;margin:4px 0 4px 0; }
+        div.issn { display:inline;padding:0 26px 0 0;position:absolute;right:0; }
+        div.faq_item { border-top:3px solid #13A7FF;border-bottom:3px solid #13A7FF;margin:3px 5px 3px 5px;background-color:#F0F0F0;padding:3px 3px 7px 3px; }
+    </style>
+</head>
+<body class="sidebars"> <!-- without this everything would be left-aligned -->
+
+
+<div id="header-region"></div>
+<div id="wrapper">
+    <div id="container" class="clear-block">
+        <div id="header">
+            <div class="lefty">
+                <img class="bannerfloat" src="/stylesheets/images/ip-banner-white_small.png">
+                <h1><a href="/" title="Pion Ltd"><span>Pion Ltd</span> <font size=+1><b>&#8212; independent publishers of academic journals</b></font></a></h1>
+            </div>
+            <div id="logo-floater"></div>
+        </div>
+        <div id="sidebar-left" class="sidebar">
+            <div id="block-user-1" class="clear-block block block-user">
+                <h2>Pion journals</h2>
+                <div class="content">
+                    <ul class="menu">
+                        <li class="leaf first"><a href="http://www.envplan.com/A.html">EPA</a></li>
+                        <li class="leaf first"><a href="http://www.envplan.com/B.html">EPB</a></li>
+                        <li class="leaf first"><a href="http://www.envplan.com/C.html">EPC</a></li>
+                        <li class="leaf first"><a href="http://www.envplan.com/D.html">EPD</a></li>
+                        <li class="leaf first"><a href="http://www.hthpweb.com">HTHP</a></li>
+                        <li class="leaf first"><a href="http://www.perceptionweb.com/">Perception</a></li>
+                        <li class="leaf first"><a href="/journal/I" class="active">i-Perception</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="center">
+            <div id="squeeze">
+                <div class="right-corner">
+                    <div class="left-corner">
+                        <div class="clear-block">
+                            <div id="node-5" class="node">
+                                <table border="0" width="260" align="left">
+                                    <tr><td>
+                                        <img src="/stylesheets/images/ipcover4.png" align="left" style="margin:10px;">
+                                    </td></tr>
+                                    <tr><td style="font-family:Verdana;font-size:10px;color:#292929;padding: 0px 20px 0px 20px;">
+                                        i-Perception cover based on 'Psychometric function' by Nicholas Wade.
+                                        <a href="http://perceptionweb.com/i-perception2/index.cgi?istat=iwade">Read more</a>.
+                                    </td></tr>
+                                </table>
+                                <h4>What is <i>i-Perception</i></h4>
+                                <div class="issn">ISSN 2041-6695 (online)</div>
+                                <br /><br />
+                                i-Perception is a new open-access sister journal to Perception.
+                                For nearly 40 years Perception has been a leading journal for everyone interested in all the senses and the perceptual processes of humans, animals and machines.
+                                i-Perception covers the same academic areas but while Perception will continue as a free-to-publish, pay-to-read journal of the traditional sort, i-Perception is a pay-to-publish, free-to-read journal, thereby disseminating refereed accounts of research as widely as possible.
+                                Although the two journals will be treated separately bibliographically and as regards indexing and other listings, they share a common editorial board, refereeing standards and have similar submission procedures.
+                            </div>
+                            <i>Pion Ltd</i> &copy; 2009 Pion Ltd.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sidebar-right" class="sidebar">
+            <div id="block-user-1" class="clear-block block block-user">
+                <span id="scrollmenu" style="position:absolute">
+                    [% PROCESS templates/_resources.tmpl %]
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

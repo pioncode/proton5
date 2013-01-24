@@ -1,0 +1,53 @@
+[% PROCESS templates/header.tmpl %]
+
+<div id="header-region"></div>
+<div id="wrapper">
+    <div id="container" class="clear-block">
+        <div id="header">
+            <div class="lefty">
+                <img class="bannerfloat" src="/stylesheets/images/ip-banner-white_small.png">
+                <h1><a href="/" title="Pion Ltd"><span>Pion Ltd</span> <font size=+1><b>&#8212; independent publishers of academic journals</b></font></a></h1>
+            </div>
+            <div id="logo-floater"></div>
+        </div>
+        <div id="sidebar-left" class="sidebar">
+            <div id="block-user-1" class="clear-block block block-user">
+                <h2>Pion journals</h2>
+                <div class="content">
+                    <ul class="menu">
+                        <li class="leaf first"><a href="http://www.envplan.com/A.html">EPA</a></li>
+                        <li class="leaf first"><a href="http://www.envplan.com/B.html">EPB</a></li>
+                        <li class="leaf first"><a href="http://www.envplan.com/C.html">EPC</a></li>
+                        <li class="leaf first"><a href="http://www.envplan.com/D.html">EPD</a></li>
+                        <li class="leaf first"><a href="http://www.hthpweb.com">HTHP</a></li>
+                        <li class="leaf first"><a href="http://www.perceptionweb.com/">Perception</a></li>
+                        <li class="leaf first"><a href="/journal/I">i-Perception</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="center">
+            <div id="squeeze">
+                <div class="right-corner">
+                    <div class="left-corner">
+                        <div class="clear-block">
+                            <div id="node-5" class="node">
+                                <h1>Our journals</h1>
+                            </div>
+                            <i>Pion Ltd</i> &copy; 2009 Pion Ltd.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sidebar-right" class="sidebar">
+            <div id="block-user-1" class="clear-block block block-user">
+                <span id="scrollmenu" style="position:absolute">
+                    [% PROCESS templates/_resources.tmpl %]
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+[% PROCESS templates/footer.tmpl %]

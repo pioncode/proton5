@@ -1,0 +1,139 @@
+[% FOREACH item_p IN papers %]
+
+    [% IF !((item_p.ptype == '21' OR item_p.ptype==22 OR item_p.ptype==23) AND show_talks==1)%]
+    <div class="clear-block">
+    [%END%]
+    [% SWITCH item_p.ptype %]
+       [% CASE '16' %]  [% colortype = 'colortype16' %]
+       [% CASE '19' %]  [% colortype = 'colortype19' %]
+       [% CASE '18' %]  [% colortype = 'colortype16' %]
+        [% CASE '17' %]  [% colortype = 'colortype17' %]
+        [% CASE '0' %] [% colortype = 'colortype0' %]
+        [% CASE '1' %] [% colortype = 'colortype17' %]
+        [% CASE '20' %] [% colortype = 'colortype17' %]
+    [% END %]
+ <!--   <div class="background-[% colortype %]">
+    <p class="paper-background">-->
+        [% IF item_p.imageurl %]
+            <a href="/journal/[% item_p.journal %]/volume/[% item_p.volume %]/article/[% item_p.paperid %]"><img class="iconfloat" align="left" src="[% item_p.imageurl %]" width="64" height="64"></a>
+        [% END %]
+      <!-- <a href="/journal/[% item_p.journal %]/volume/[% item_p.volume %]/article/[% item_p.paperid %]">-->
+        [% SWITCH item_p.ptype %]
+        [%  CASE '0' %]
+            [% IF current.journal ==  'I' %]     
+            <a href="/journal/[% item_p.journal %]/volume/[% item_p.volume %]/article/[% item_p.paperid %]">
+
+[%IF item_p.theme_title%]
+<img  width="96" height="96" src="/fulltext/virtual_icons/virtual_[% item_p.virtual_theme_id %].png" class="iconfloat"/> </a> 
+[%END%]
+
+[%IF !(item_p.theme_title) %]
+<img  width="96" height="96" src="/fulltext/[% current.volume_subdir %]/[% item_p.paperid %].png" class="iconfloat"/> </a> 
+[%END%]
+
+            [% END %]    
+    <div class="background-[% colortype %]">
+    <p class="paper-background">[% IF item_p.theme_title %]
+        <b><i> [% item_p.theme_title %] (<a href='/journal/I/theme/[% item_p.virtual_theme_id %]'>Special issue</a>)</i></b> 
+        [% END %]
+        </p>
+        [%  CASE '1' %]
+             [% IF current.journal ==  'I' %]     
+             <a href="/journal/[% item_p.journal %]/volume/[% item_p.volume %]/article/[% item_p.paperid %]"><img  width="96" height="96" src="/standard-icons/standard-5.png" class="iconfloat"/></a> 
+             [% END %]
+              <div class="background-[% colortype %]">
+    <p class="paper-background"> <b>Guest editorial</b></p>
+        [%  CASE '5' %]
+            [% IF current.journal ==  'I' %]     
+            <a href="/journal/[% item_p.journal %]/volume/[% item_p.volume %]/article/[% item_p.paperid %]"><img  width="96" height="96" src="/standard-icons/standard-5.png" class="iconfloat"/></a> 
+            [% END %]
+               <div class="background-[% colortype %]">
+    <p class="paper-background"><b>Editorial</b></p>
+        [%  CASE '10' %]
+               <div class="background-[% colortype %]">
+    <p class="paper-background"><b>Last but not least</b></p>
+        [%  CASE '16' %]
+            [% IF current.journal ==  'I' %]     
+            <a href="/journal/[% item_p.journal %]/volume/[% item_p.volume %]/article/[% item_p.paperid %]"><img  width="96" height="96" src="/standard-icons/standard-16.png" class="iconfloat"/></a> 
+            [% END %]
+               <div class="background-[% colortype %]">
+    <p class="paper-background"><b>     [% IF item_p.theme_title %]<i> [% item_p.theme_title %] (<a href='/journal/I/theme/[% item_p.virtual_theme_id %]'>Theme collection</a>)</i>&#8212;   [% END %]Short and Sweet</b></p>
+        [%  CASE '17' %]
+            [% IF current.journal ==  'I' %]     <a href="/journal/[% item_p.journal %]/volume/[% item_p.volume %]/article/[% item_p.paperid %]"><img  width="96" height="96" src="/standard-icons/standard-5.png" class="iconfloat"/></a> [% END %]
+               <div class="background-[% colortype %]">
+    <p class="paper-background"><b> [% IF item_p.theme_title %]<i> [% item_p.theme_title %] (<a href='/journal/I/theme/[% item_p.virtual_theme_id %]'>Theme collection</a>)</i> [% ELSE %]Editorial announcement[% END %]</b></p>
+        [%  CASE '18' %]
+            [% IF current.journal ==  'I' %]     <a href="/journal/[% item_p.journal %]/volume/[% item_p.volume %]/article/[% item_p.paperid %]"><img  width="96" height="96" src="/standard-icons/i-Comment_96.png" class="iconfloat"/></a> [% END %]
+               <div class="background-[% colortype %]">
+    <p class="paper-background"><b>     [% IF item_p.theme_title %]<i> [% item_p.theme_title %] (<a href='/journal/I/theme/[% item_p.virtual_theme_id %]'>Theme collection</a>)</i>&#8212;   [% END %]i-Comment</b></p>
+        [%  CASE '19' %]
+            [% IF current.journal ==  'I' %]     <a href="/journal/[% item_p.journal %]/volume/[% item_p.volume %]/article/[% item_p.paperid %]"><img  width="96" height="96" src="/standard-icons/i-Review_96.png" class="iconfloat"/></a> [% END %]
+               <div class="background-[% colortype %]">
+    <p class="paper-background"><b>     [% IF item_p.theme_title %]<i> [% item_p.theme_title %] (<a href='/journal/I/theme/[% item_p.virtual_theme_id %]'>Theme collection</a>)</i>&#8212;   [% END %]i-Review</b></p>
+
+        [%  CASE '20' %]
+           [% IF current.journal ==  'I' %]
+		[%IF show_talks==1  %]
+         <a href="/journal/[% item_p.journal %]/volume/[% item_p.volume %]/issue/[% item_p.issue %]"><img  width="96" height="96" src="/fulltext/[% current.volume_subdir %]/[% item_p.paperid %].png" class="iconfloat"/> </a>  
+		<div class="background-[% colortype %]">
+			<div class="title-auth-block">
+				<a href="/journal/[% item_p.journal %]/volume/[% item_p.volume %]/issue/[% item_p.issue %]"><b>[% item_p.title FILTER html %]</b></a>
+                			[% item_p.tlk_startp %]&ndash;[% item_p.tlk_endpg %]
+				</div>
+			</div>
+		[%END%]
+		[%IF show_talks!=1%]
+			<div class="background-ct_17_no_min_height">
+         			[% item_p.abstract %]
+			</div>
+        	[%END%]
+        [% END %]    
+
+        [%  CASE '21'%]
+            [% IF current.journal ==  'I' AND show_talks!=1 %]  <br>  <h2>[% item_p.title  %]</h2> [% END %]    
+        [%  CASE ['22', '23'] %]
+        [% IF current.journal ==  'I' AND show_talks!=1 %]
+                <div>
+        <p class="paper-background"></p>
+        
+
+        [%END%]
+       [% END %]
+ 	[% IF !(item_p.ptype == '21' OR item_p.ptype == '20' OR ( (item_p.ptype==22 OR item_p.ptype==23) AND show_talks==1) )%]
+        <div class="title-auth-block"> 
+	 [% IF(item_p.paperchain)%]
+	 <!-- Find reference paper -->
+           [% FOREACH refpaper IN papers %]
+            [%IF (item_p.paperchain==refpaper.paperchain_id) %]
+             <a href="/journal/[% item_p.journal %]/volume/[% item_p.volume %]/article/[% refpaper.paperid %]"><b>[% refpaper.title FILTER html %]</b></a>
+             [% IF item_p.start_page AND item_p.end_page %] [% item_p.start_page %] [%IF item_p.start_page != item_p.end_page%]&ndash;[% item_p.end_page %][%END%][% END %]
+	     <br/>
+	     [% FOREACH refpaper_a IN refpaper.authors %]
+              [% refpaper_a.first_name %] [% refpaper_a.last_name %][% ", " IF NOT loop.last %]
+             [% END %]
+            [%END%]
+           [%END%]
+	 [%ELSE%]
+         <a href="/journal/[% item_p.journal %]/volume/[% item_p.volume %]/article/[% item_p.paperid %]"><b>[% item_p.title FILTER html %]</b></a>
+          [% IF item_p.start_page AND item_p.end_page %] [% item_p.start_page %] [%IF item_p.start_page != item_p.end_page%]&ndash;[% item_p.end_page %][%END%][% END %]
+        <br />
+        [% FOREACH item_a IN item_p.authors %]
+            [% item_a.first_name %] [% item_a.last_name %][% ", " IF NOT loop.last %]
+        [% END %]
+        [%END%]
+        <br />
+
+
+<!--         TODO: Create direct PDF link -->
+       </div>
+       </div>
+     [%END%]
+
+
+ 
+    [% IF !((item_p.ptype == '21' OR item_p.ptype==22 OR item_p.ptype==23) AND show_talks==1)%]
+    </div>
+    [% END%]
+
+[% END %]
+

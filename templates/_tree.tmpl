@@ -1,0 +1,48 @@
+<h2>Contents</h2>
+<div class="content"> <!-- descendent on block class, this puts in a small margin, doesn't seem to do much else -->
+    <ul class="menu">
+        [% current.journal = 'I' %]
+        <li><a href="/journal/[% current.journal %]/volume/current/issue/current">Current issue</a></li>
+        <li><a href="/journal/[% current.journal %]/volume/current">Current volume</a></li>
+        [% IF volumes.size() > 5 %]
+            [% IF current.showallvolumes == 1 %]
+                <li class="leaf first"><a href="/journal/[% current.journal %]">list latest volumes</a></li>
+            [% ELSE %]
+                <li class="leaf first"><a href="/journal/[% current.journal %]/volumes">list all volumes</a></li>
+            [% END %]
+        [% END %]
+        <!--li class="leaf first"><a href="/journal/[% current.journal %]/volume/0">Advance Publications</a></li-->
+        [% FOREACH item_v IN volumes %]
+            [% LAST IF loop.index == 5 AND current.showallvolumes != 1 %]
+            [% IF item_v.issues %]
+                <li class="expanded active-trail"><a href="/journal/[% item_v.journal %]/volume/[% item_v.volume %]" class="active">Volume [% item_v.volume %] ([% item_v.year %])</a>
+                    <ul class="menu">
+                    [% FOREACH item_i IN item_v.issues %]
+                        [% IF item_i.papers%]
+                            <li class="expanded active-trail"><a href="/journal/[% item_i.journal %]/volume/[% item_i.volume %]/issue/[% item_i.issue %]" class="active">Issue [% item_i.issue %]</a>
+                                <ul class="menu">
+                                [% FOREACH item_p IN item_i.papers %]
+				    [%IF item_p.talk_id==''%]
+                                     [% IF article AND item_p.paperid == article.paperid %]
+                                        <li class="leaf first"><a href="/journal/[% item_p.journal %]/volume/[% item_p.volume %]/article/[% item_p.paperid %]" title="[% item_p.title %]" class="active">page [% item_p.start_page %] &ndash;</a></li>
+                                     [% ELSE %]
+                                        <li class="collapsed"><a href="/journal/[% item_p.journal %]/volume/[% item_p.volume %]/article/[% item_p.paperid %]" title="[% item_p.title %]">			[%IF item_p.end_page!=0%]page [% item_p.start_page %]
+							[%IF (item_p.end_page!=item_p.start_page)%] &ndash; [% item_p.end_page %][%END%]</a></li>
+                                     [%END%]
+				    [%END%]
+                                   [% END %]
+                                [% END %]
+                                </ul>
+                            </li>
+                        [% ELSE %]
+                            <li class="collapsed"><a href="/journal/[% item_i.journal %]/volume/[% item_i.volume %]/issue/[% item_i.issue %]">Issue [% item_i.issue %]</a></li>
+                        [% END %]
+                    [% END %]
+                    </ul>
+                </li>
+            [% ELSE %]
+                <li class="collapsed"><a href="/journal/[% item_v.journal %]/volume/[% item_v.volume %]">Volume [% item_v.volume %] ([% item_v.year %])</a></li>
+            [% END %]
+        [% END %]
+    </ul>
+</div>

@@ -1,0 +1,249 @@
+[% PROCESS templates/header_showarticle.tmpl title = current.title _ ' : ' _ article.title %]
+
+<div id="header-region"></div>               <!-- puts a space at top -->
+<div id="wrapper">                           <!-- Wrapper is overall area containing everything else -->
+    <div id="container" class="clear-block"> <!-- container is subarea of wrapper which doesn't include dead space on left and right. -->
+                                             <!--"clear-block" makes block clear float -->
+         [% PROCESS templates/_headerstuff.tmpl %]
+        <div id="sidebar-left" class="sidebar">
+            <div id="block-user-1" class="clear-block block block-user">
+                [% PROCESS templates/_tree.tmpl %]
+            </div>
+        </div>
+        <div id="center"> <!-- the following divs are all descendent -->
+            <div id="squeeze">
+                <div class="right-corner">
+                    <div class="left-corner">
+                        <div class="clear-block">
+                            <div id="node-5" class="node"> <!-- this puts a line under the text (same colour as background), giving the impression that the block is separated in two-->
+                            [% IF article.theme_title %]<p><b><i>[% article.theme_title %]</i></b></p>[% END %]
+                              [% SWITCH article.ptype %]
+                                 [% CASE '16' %]
+                                   <b><i>SHORT AND SWEET</i></b>
+                                 [% CASE '17' %]
+                                 <b><i>EDITORIAL ANNOUNCEMENT</i></b>
+                                 [% CASE '18' %]
+                                   <b><i>i-COMMENT</i></b>
+                                 [% CASE '19' %]
+                                   <b><i>i-REVIEW</i></b>
+                                 [% CASE '1' %]
+                                 <b><i>GUEST EDITORIAL</i></b>
+                              [% END %]
+
+                                <h1 class="title">[% article.title FILTER html %]</h1>
+                                <p>
+                                [% IF article.authors %]				       
+                                    [% FOREACH item_a IN article.authors %]
+                                       [%# Catch one-off custom styles%]
+				       [% SWITCH article.talk_id%]
+
+					[% CASE 'AVAX11'%]
+					 [%# Add opening tag, remember email and address%]
+					 [%IF loop.first%]
+					  [% strAddress=item_a.address%]
+					  [% strEmail=item_a.email%]
+                                          <p class="author">					 
+				         [%END%]
+					 [%# Only add , between names if this is not the last entry%]
+                                         [% item_a.first_name %] [% item_a.last_name %][%IF !(loop.last)%], [%END%]
+					 
+ 					 
+					 [%# Add closing tag, print address and email from the first time round the loop%]
+					 [%IF loop.last%]
+					 </p>
+                                         <p class="address">
+                                          [% strAddress %]<br></br>[% strEmail%]
+                                         </p>
+				         [%END%]
+
+				        [%# default%]
+					[% CASE %]
+                                          <p class="author">
+                                           [% item_a.first_name %] [% item_a.last_name %]
+                                          </p>
+                                          <p class="address">
+                                           [% item_a.address %]<br></br>[%item_a.email%]
+                                          </p>
+				       [%END %]
+				    [% END %]
+                                [% END %]
+                                </p>
+                                <p><h4>
+                                   
+                                    &nbsp;
+				   [%IF !(article.ptype=='22' ) %]
+
+				     [% IF article.pdf AND article.ptype!='23' %]
+                                         <div class="file_link">
+					  <div class="download_link">
+                                          <a href="[% article.pdf %]"><img src='/stylesheets/images/pdficon_small.gif'> Full text</a>
+                                         </div>
+                                         <div class="adobe_link">
+                                          <a class="adobe_link" href="http://get.adobe.com/uk/reader/"><img src='/stylesheets/images/reader_128_v2.jpg'>Please download the latest version of Adobe Reader to view this document</a>
+                                         </div>
+					  [%# For Mac%]
+					  [%IF article.mac_pdf AND article.ptype!='23' %]
+					  <div class="download_link">
+                                          <a href="[% article.mac_pdf %]"><img src='/stylesheets/images/pdficon_small.gif'> Full text for Mac</a>
+                                         </div>
+					 [%END%]
+					</div>
+
+				    [%END%]
+				    [% IF !(article.pdf) AND article.ptype!='23' %]
+                                      <img src='/stylesheets/images/pdficon_small.gif'> <font color='#999999'>Full text</font>
+				    [% END %]
+
+				     [% IF article.pdf AND article.ptype=='23' %]
+                                         <a href="/posters/[%article.paperid%].pdf"><img src='/stylesheets/images/pdficon_small.gif'> Poster</a>
+				    [%END%]
+
+				     [% IF !(article.pdf) AND article.ptype=='23' %]
+                                         <img src='/stylesheets/images/pdficon_small.gif'> <font color='#999999'>Poster</font>
+				    [%END%]
+
+                                    &nbsp;
+					[% IF article.html AND article.ptype!='23'  %]
+                                          <a href="[% article.html %]"><img src='/stylesheets/images/html2.gif'> Full text</a>
+					[%END%]
+					[% IF article.html AND article.ptype=='23'  %]
+                                         <a href="[% article.html %]"><img src='/stylesheets/images/html2.gif'> Poster</a>
+					[% END %]
+				    [%END%]
+					
+                                    <!--&nbsp;<font color='#999999'>References</font>-->
+                                </h4></p>
+
+				[% IF article.abstract %]
+                                <div class="abstract">
+					[%IF !(article.ptype=='22' OR article.ptype=='23') %]
+						<b>Abstract.</b>
+					<!--Test-->
+					[% # removed to stop the HTML filter, RFC 2012: article.abstract FILTER html %]
+					[% article.abstract %]
+					[%END%] 
+					[%IF article.ptype=='22' OR article.ptype=='23'%]
+					[% article.abstract %]
+
+
+					[%END%]
+				</div>
+
+				[% END %]
+                                [% IF article.misc %]
+                                    <br /><b>[% article.misc %]</b><br />
+                                    [% FOREACH item_m IN article.miscs %]
+                                        [%# IF item_m.error %]
+                                          <!--  <li class="leaf first">[% item_m.link_title %]: material cannot currently be located! ([% current.miscpath %]/[% item_m.url %])</li>-->
+                                        [%# ELSE %]
+                                            <!--<li class="leaf first"><a href="[% current.miscpath %]/[% item_m.url %]">[% item_m.link_title %]</a></li>-->
+                                        [%# END %] 
+                                        <li class="leaf first"> <a href="[% current.miscpath.replace('/htdocs/iperception', '') %]/[% current.volume_subdir %]/[% item_m.url %]">[% item_m.link_title %]</a></li>
+                                    [% END %]
+                                [% END %]
+                                <br />
+                                <br />
+                                [% IF ! article.talk_id %]
+                                <p class="ref"><b>Cite as:</b>
+                                    [% FOREACH item_a IN article.authors %][% item_a.last_name %]&nbsp;[% item_a.first_name FILTER remove('[^A-Z|\s|-]') %], [% END %]
+                                    [% article.year %], "[% article.title FILTER html %]" <i>[% current.title %]</i> <b>[% current.volume %]</b>([% current.issue %])&nbsp;[% article.start_page %][%IF article.end_page!=article.start_page%]&#8211;[% article.end_page %][%END%]
+<br /><a href="http://www.perceptionweb.com/ris.cgi?id=[% article.paperid %]">Download citation data in RIS format</a>
+                                </p>
+                                [%END%]
+                                [% IF article.received %]
+                                    <p class="ref"><b>History:</b> [% article.received %]</p>
+                                [% END %]
+				[% IF ! article.talk_id %]
+                                <p class="ref"><b>DOI:</b> <a href="http://dx.doi.org/[% article.doi %]">[% article.doi %]</a></p>
+				[% END %]
+                                <p class="ref"><b>ISSN:</b> 2041-6695 (electronic only)</p>
+                                <p class="ref"><b>Copyright:</b> Copyright is retained by the author(s) of this article. This open-access article is distributed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Licence</a>, which permits noncommercial use, distribution, and reproduction, provided the original author(s) and source are credited and no alterations are made.<br /><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons Licence" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a>
+                                <br /><br />
+					[%IF article.ptype=='23'%]
+
+                                    <a href="#" class="ask" onClick="show_div('upload_poster'); return false;">Upload a poster</a>
+				<div id="upload_poster" class="faq_item" style="display:none;">
+					<form enctype="multipart/form-data" action="/upload_poster.php" method="POST">
+    					<input type="hidden" name="MAX_FILE_SIZE" value="20000000" />
+    					<input type="hidden" name="PAPERID" value="[%article.paperid%]" />
+					Conference id:   <input name="password" type="password"/><br />
+					Upload a poster in PDF format: <input type="file" name="uploadfile" /><br />
+					Tick to remove poster:   <input type="checkbox" name="option1" value="Delete"> <br>
+					<input type=button name="Submit" value="Attach" onclick="LimitAttach(this.form, this.form.uploadfile.value)"/>
+					</form>
+				</div>
+					[%END%]
+                                <br /><br />
+                            </div>
+				[%IF (article.ptype=='18' || article.ptype=='19' ) %]
+				<!--Comment Box-->
+				 <div id="comment_[%article.paperid%]"></div>
+				[%END%]
+				<img src="/stylesheets/images/pionlogo2.png">a <a href="http://www.pion.co.uk">Pion</a> publication
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sidebar-right" class="sidebar">
+            <div id="block-user-1" class="clear-block block block-user">
+                <span id="scrollmenu" style="position:absolute">
+                    [% PROCESS templates/_resources.tmpl %]
+                    [% PROCESS templates/_journals.tmpl %]
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+// Define filetypes that can be uploaded
+// Check for delete option
+// Check that confid matched for any operation
+
+//Array of allowed file types
+extArray = new Array(".pdf");
+function LimitAttach(form, file) {
+allowSubmit = false;
+//Conf id check
+if (form.password.value != "[%article.talk_id%]"){ 
+ alert("Sorry, wrong ID");
+ return;}
+//Delete poster
+if(form.option1.checked)
+{
+doIt=confirm('Confirm you wish to delete poster');
+  if(doIt){
+    form.submit();
+  }
+  else{
+    return;
+  }
+}
+//File there, if so, then check it is PDF
+if (!file) return;
+while (file.indexOf("\\") != -1)
+file = file.slice(file.indexOf("\\") + 1);
+ext = file.slice(file.indexOf(".")).toLowerCase();
+for (var i = 0; i < extArray.length; i++) {
+if (extArray[i] == ext) { allowSubmit = true; break; }
+}
+if (allowSubmit) form.submit();
+else
+alert("Please only upload files that end in:  " 
++ (extArray.join("  ")) + "\nPlease select a new "
++ "file to upload and submit again.");
+}
+
+//Hide the poster upload unless it is needed
+function show_div( div_id, style ) {
+  // get current display style
+ current = document.getElementById(div_id).style.display;
+ style = style ? style : 'block'
+ // show or hide the requested div
+ document.getElementById(div_id).style.display = ( current == style ) ? 'none' : style;
+}
+</script>
+
+[% PROCESS templates/footer.tmpl %]

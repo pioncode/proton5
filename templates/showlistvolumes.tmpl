@@ -1,0 +1,52 @@
+[% PROCESS templates/header.tmpl title = current.title %]
+
+<div id="header-region"></div>                   <!-- puts a space at top -->
+    <div id="wrapper">                           <!-- Wrapper is overall area containing everything else -->
+        <div id="container" class="clear-block"> <!-- container is subarea of wrapper which doesn't include dead space on left and right. -->
+                                                 <!--"clear-block" makes block clear float -->
+            [% PROCESS templates/_headerstuff.tmpl %]
+            <div id="sidebar-left" class="sidebar">
+            <div id="block-user-1" class="clear-block block block-user">
+               [% PROCESS templates/_tree.tmpl %] 
+            </div>
+        </div>
+        <div id="center"> <!-- the following divs are all descendent -->
+            <div id="squeeze">
+                <div class="right-corner">
+                    <div class="left-corner">
+                        <div class="clear-block">
+                            <div id="node-5" class="node_cv"> <!-- this puts a line under the text (same colour as background), giving the impression that the block is separated in two-->
+                                <div id=issn>ISSN [% current.issn_e %]</div>
+<div id="ANN">
+				<h1>Announcements: i-Perception has now been accepted for indexing in <a href="http://www.ncbi.nlm.nih.gov/sites/entrez">PubMed</a>!</h1>
+
+</div>
+                                  <div id="about-block">
+                                       <div class="coverimage">
+                                          <img border="2" align="right" width="256" height="365" src="/stylesheets/images/ipcover4.png" class="thinborderfloat"> 
+                                          <p><i>i-Perception</i> cover based on 'Psychometric function' by Nicholas Wade. <a href="/aboutcover">More details.</a></p>
+                                       </div>
+                                       <p><nobr><i>i-Perception</i></nobr> is a new open-access sister journal to <i>Perception</i>.  For nearly 40 years <i>Perception</i> has been a leading journal for everyone interested in all the senses and the perceptual processes of humans, animals and machines.  <nobr><i>i-Perception</i></nobr> covers the same academic areas but while <i>Perception</i> will continue as a free-to-publish, pay-to-read journal of the traditional sort, <nobr><i>i-Perception</i></nobr> is a pay-to-publish, free-to-read journal, thereby disseminating refereed accounts of research as widely as possible.  Although the two journals will be treated separately bibliographically and as regards indexing and other listings, they share a common editorial board, refereeing standards and have similar submission procedures.</p>
+                                       <p><a href="/journal/[% current.journal %]/volume/current/issue/current">Current issue</a></p>
+
+                                 </div>
+                            </div>
+ <img src="/stylesheets/images/pionlogo2.png">a <a href="http://www.pion.co.uk">Pion</a> publication
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sidebar-right" class="sidebar">
+            <div id="block-user-1" class="clear-block block block-user">
+                <span id="scrollmenu" style="position:absolute">
+                    [% PROCESS templates/_resources.tmpl %]
+                    [% PROCESS templates/_journals.tmpl %]
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+[% PROCESS templates/footer.tmpl %]

@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+    <title>i-Perception</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link type="text/css" rel="stylesheet" media="all"   href="/stylesheets/defaults.css" />    <!-- takes care of clearing floats -->
+    <link type="text/css" rel="stylesheet" media="all"   href="/stylesheets/system-menus.css" /><!-- affects colours of active menu links -->
+    <link type="text/css" rel="stylesheet" media="all"   href="/stylesheets/style.css" />       <!-- takes care of main style issues -->
+    <link type="text/css" rel="stylesheet" media="print" href="/stylesheets/print.css" /> 
+    <script type="text/javascript">
+        function show_div( div_id, style ) {
+            // get current display style
+            current = document.getElementById(div_id).style.display;
+            style = style ? style : 'block'
+            // show or hide the requested div
+            document.getElementById(div_id).style.display = ( current == style ) ? 'none' : style;
+        }
+    </script>
+    <style>
+        a.ask { display:block;font-weight:bold;margin:4px 0 4px 0; }
+        div.issn { display:inline;padding:0 26px 0 0;position:absolute;right:0; }
+        div.faq_item { border-top:3px solid #13A7FF;border-bottom:3px solid #13A7FF;margin:3px 5px 3px 5px;background-color:#F0F0F0;padding:3px 3px 7px 3px; }
+    </style>
+</head>
+<body class="sidebars" [% IF show %] onLoad="show_div('faq[% show %]');" [% END %] >
+
+<div id="header-region"></div>
+<div id="wrapper">
+    <div id="container" class="clear-block">
+        [% PROCESS templates/_headerstuff.tmpl %]
+        <div id="sidebar-left" class="sidebar">
+            <div id="block-user-1" class="clear-block block block-user">
+                [% PROCESS templates/_tree.tmpl %]            
+           </div>
+        </div>
+        <div id="center">
+            <div id="squeeze">
+                <div class="right-corner">
+                    <div class="left-corner">
+                        <div class="clear-block">
+                            <div id="node-5" class="node">
+                                <h4>Learn more about <nobr><i>i-Perception</i></nobr></h4>
+                                <div class="issn">ISSN 2041-6695 (online)</div>
+                                <div id="faqs">
+                                    <a href="#" class="ask" onClick="show_div('faq01'); return false;">What is <nobr><i>i-Perception</i>?</nobr></a>
+                                    <div id="faq01" class="faq_item" style="display:none;">
+                                        <p><nobr><i>i-Perception</i></nobr> is a new open-access sister journal to <i>Perception</i>.  For nearly 40 years <i>Perception</i> has been a leading journal for everyone interested in all the senses and the perceptual processes of humans, animals and machines.  <nobr><i>i-Perception</i></nobr> covers the same academic areas but while <i>Perception</i> will continue as a free-to-publish, pay-to-read journal of the traditional sort, <nobr><i>i-Perception</i></nobr> is a pay-to-publish, free-to-read journal, thereby disseminating refereed accounts of research as widely as possible.  Although the two journals will be treated separately bibliographically and as regards indexing and other listings, they share a common editorial board, refereeing standards and have similar submission procedures.
+
+                                    </div>
+                                  <a href="#" class="ask" onClick="show_div('faq03'); return false;">How can I submit to <nobr><i>i-Perception</i></nobr>?&nbsp;&nbsp;&lt;DOWNLOAD TEMPLATE</a>
+                                    <div id="faq03" class="faq_item" style="display:none;">
+                               Submission to <nobr><i>i-Perception</i></nobr> is via PiMMS (the Pion Manuscript Management System), at <a href="http://submission.perceptionweb.com">http://submission.perceptionweb.com</a> where authors can chose between submitting to <i>Perception</i> or <nobr><i>i-Perception</i></nobr>.
+
+<p>Please start by reading the general <i>Perception</i>/<i>i-Perception</i> <a href='http://submission.perceptionweb.com/supplement/instructions/ip/authors.html' target="_blank" >Notes for Authors</a>, where you will find more information on specific paper types. Then, for more specific details on how to prepare manuscripts for <nobr><i>i-Perception</i></nobr>, please read the template instructions, below, which have themselves been prepared in the <i>i-Perception</i> template.<b>You may delay using the template until your paper has been accepted for publicaiton. However, please note that failure to use the template for your submission of final publication materials upon acceptance will result in extra cost during invoicing</b>:
+<p>Download template (with instructions): <a href="/iPAuthnotes.doc">Template</a> 
+
+<p>(Hint: right-click and "save link as".)</p>
+
+                                    </div>
+                                    <a href="#" class="ask" onClick="show_div('faq02'); return false;">Who are the editors of <i>i-Perception</i>?</a>
+                                    <div id="faq02" class="faq_item" style="display:none;">
+
+
+
+  <table style="margin-left:20%;" border = "0" padding = "0" margin="0">
+
+	<tr>
+	<td align=left width= 33% colspan=1><font color ="#606060"><b>Chief editors:</b></font>
+
+	  <td align=left width=33% colspan=1>Peter Thompson</td>
+	  <td align=left width=33% colspan=1>Tim Meese</td>
+
+	</tr>
+	<tr>
+	<td valign=top align=left><!--(Click an editor's picture to read his biography)--></td>
+	
+	<td> <!--<a href="thompson_bio.html" onClick="popitup(this.href,'Pete','width=450,height=500,scrollbars=yes'); return false;">--><img class="thinborderfloat" src="/stylesheets/images/thompson.jpg" align=right border=2 width=90 height=120><!--</a>--> </td>
+	<td> <!--<a href="meese_bio.html" onClick="popitup(this.href,'Tim','width=450,height=500,scrollbars=yes'); return false;">--><img class="thinborderfloat" src="/stylesheets/images/tim.jpg" align=right border=2 width=90 height=120 ><!--</a>--> </td>
+
+	</tr>
+
+
+<tr>
+<td align=left colspan=3><font color ="#606060"><b>Chief editor:</b></font></td> 
+	<tr>
+        <td></td>
+        <td align=center colspan=2><img class="thinborder" src="/stylesheets/images/troscianko.jpg" border=2 width=90 height=120 ></td>
+	</tr>
+        <td></td>
+	<td align=center  colspan=2>Tom Troscianko (1953&ndash;2011)</td>	
+</tr>
+
+	<td align=left colspan=3><font color ="#606060"><b>Founding editor:</b></font></td> 
+	<tr>
+        <td></td>
+        <td align=center colspan=2><img class="thinborder" src="/stylesheets/images/gregory.jpg" border=2 width=90 height=120 ></td>
+	</tr>
+        <td></td>
+	<td align=center  colspan=2>Richard Gregory (1923&ndash;2010)</td>
+
+	</tr>
+
+<tr>
+</table>        <font size="1px"><table border = "0" padding = "0" margin="0">
+	<td align=left><p><font color ="#606060"><b>Short-and-Sweet editors:</b></font>
+
+	  <tr>
+	  <td align=left  valign=top>
+ 
+	
+<dt><b>Derek Arnold</b> School of Psychology, University of Queensland, Brisbane QLD 4072, Austrailia; email:&nbsp;darnold@psy.uq.edu.au
+<dt><b>Chris Benton</b> Department of Experimental Psychology, University of Bristol, Bristol, BS8 1TU, UK; email:&nbsp;chris.benton@bristol.ac.uk
+ <dt><b>Ben Tatler</b> Department of Psychology, University of Dundee, Dundee DD1 4HN, UK; email:&nbsp;B.W.Tatler.ac.uk	
+
+<tr>
+</table>        <font size="1px"><table border = "0" padding = "0" margin="0">
+	<td align=left><p><font color ="#606060"><b>i-Reviews editor:</b></font>
+
+<dt><b>Nick Scott-Samuel</b> Experimental Psychology, University of Bristol, Bristol BS8 1TU, UK; email: &nbsp;n.e.scott-samuel@bris.ac.uk
+<tr>
+</table>        <font size="1px"><table border = "0" padding = "0" margin="0">
+	<td align=left><p><font color ="#606060"><b>i-Comment editor:</b></font>
+<dt> <b>Lee de-Wit</b> Experimental Psychology, Universiteit Leuven, Tiensestraat 102, Box 3711, 3000 Leuven, Belgium; email: &nbsp;Lee.deWit@ppw.kuleuven.be
+
+<tr>
+</table>        <font size="1px"><table border = "0" padding = "0" margin="0">
+	<td align=left><p><font color ="#606060"><b>Administrative manager:</b></font>
+<dt><b>Lesley Sacket</b> email: L.Sackett@bristol.ac.uk
+	  <tr>
+	  <td align=left  valign=top>
+	  <tr>
+	  <td align=left  valign=top>
+
+<tr>
+</table>        <font size="1px"><table border = "0" padding = "0" margin="0">
+	<td align=left><p><font color ="#606060"><b>Editorial board:</b></font>
+
+	  <tr>
+	  <td align=left  valign=top>
+ 
+	<dt><b>David Alais</b> School of Psychology, University of Sydney, NSW 2006, Australia; email:&nbsp;davida@psych.usyd.edu.au
+	 <dt><b>Tim Andrews</b> Department of Psychology, University of York, York YO10 5DD, UK; email:&nbsp;t.andrews@psych.york.ac.uk
+
+	
+	 <dt><b>Hiroshi Ashida</b> Department of Psychology, University of Kyoto, Kyoto 606-8501, Japan; email:&nbsp;ashida@psy.bun.kyoto-u.ac.jp
+	 <dt><b>Stefano Baldassi</b> Smith-Kettlewell Eye Research Institute, 2318 Fillmore Street, San Francisco CA 94115, USA; email:&nbsp;stefano.baldassi@unifi.it		 
+
+	 <dt><b>Eli Brenner</b> Faculty of Human Movement Sciences, Vrije University, 1081 BT Amsterdam, The Netherlands; email:&nbsp;e.brenner@fbw.vu.nl	 
+	 <dt><b>Bruce Bridgeman</b> Psychology Department, UC Santa Cruz, Santa Cruz CA 95064, USA; email:&nbsp;bruceb@ucsc.edu
+	 <dt><b>Heinrich B&uuml;lthoff</b> MPI for Biological Cybernetics, Tuebingen 72076, Germany; email:&nbsp;heinrich.buelthoff@tuebingen.mpg.de
+	 <dt><b>David Burr</b> Istituto di Neurofisiologia del CNR, Via G Moruzzi, I&nbsp;56010 Pisa, Italy; email:&nbsp;dave@in.cnr.it
+	 <dt><b>Mike Burton</b> School of Psychology, University of Aberdeen, Aberdeen AB24 3FX, UK; email:&nbsp;m.burton@abdn.ac.uk 
+	 <dt><b>Patrick Cavanagh</b> Universit&eacute; Paris Descartes, 75006 Paris, France; email:&nbsp;patrick.cavanagh@parisdescartes.fr
+	 <dt><b>Jim Craig</b> Department of Psychological and Brain Sciences, Indiana University, Bloomington IN 47405, USA; email:&nbsp;craigj@indiana.edu 
+	 <dt><b>Manfred Fahle</b> Human Neurobiology, University of Bremen, D 28359 Bremen, Germany; email:&nbsp;mfahle@uni-bremen.de
+
+	 <dt><b>Tom Freeman</b> School of Psychology, Cardiff University, Cardiff CF10 3AT, UK; email:&nbsp;freemant@cardiff.ac.uk
+	 <dt><b>John Frisby</b> Department of Psychology, University of Sheffield, Sheffield S10 2TN, UK; email:&nbsp;j.p.frisby@sheffield.ac.uk
+
+
+	 <dt><b>Karl Gegenfurtner</b> Abteilung Allgemeine Psychologie, Justus-Liebig-Universit&auml;t, 35394 Giessen, Germany; email:&nbsp;Karl.R.Gegenfurtner@psychol.uni-giessen.de	
+ </td><td align=left valign=top>	
+	 <dt><b>Mark Georgeson</b> Neurosciences Research Institute, Aston University, Birmingham B4 7ET, UK; email:&nbsp;m.a.georgeson@aston.ac.uk
+	 <dt><b>Alan Gilchrist</b> Department of Psychology, Rutgers University, Newark, NJ 07102, USA; email:&nbsp;alan@psychology.rutgers.edu
+	 <dt><b>Iain Gilchrist</b> Department of Experimental Psychology, University of Bristol, Bristol BS8 1TN, UK; email:&nbsp;I.D.Gilchrist@bristol.ac.uk
+	 <dt><b>Andrei Gorea</b> Laboratoire Psychologie de la Perception, Universit&eacute; Paris Descartes, 75006 Paris, France; email:&nbsp;andrei.gorea@gmail.com	 
+	 <dt><b>Lewis Griffin</b> Computer Science, University College London, London WC1E 6BT, UK; email:&nbsp;L.griffin@cs.ucl.ac.uk
+	 <dt><b>John Harris</b> Department of Psychology, University of Reading, Reading RG6 6AL, UK; email:&nbsp;j.p.harris@reading.ac.uk	
+	 								 
+	 <dt><b>Morton Heller</b> Department of Psychology, Eastern Illinois University, Charleston, IL 61920, USA; email:&nbsp;maheller@eiu.edu
+	 <dt><b>Fred Kingdom</b> McGill Vision Research, McGill University, Montr&eacute;al, Qu&eacute;bec H3A 1A1, Canada; email:&nbsp;fred.kingdom@mcgill.ca	 
+	 <dt><b>Jan Koenderink</b> Man-Machine Interaction Group, Delft University of Technology, Delft, 2628 CD, The Netherlands; email:&nbsp;jan.koenderink@telfort.nl	
+ 	 <dt><b>Johan Lundström</b> Monell Chemical Senses Center, Philadelphia, PA 19104, USA; email:&nbsp;jlundstrom@monell.org	 
+	 <dt><b>Pascal Mamassian</b> Laboratoire Psychologie de la Perception, Universit&eacute; Paris Descartes, 75006 Paris, France; email:&nbsp;pascal.mamassian@parisdescartes.fr	
+ <dt><b>Denis McKeown</b> Institute of Psychological Sciences, University of Leeds, Leeds LS2 9JT, UK; email: d.mckeown@leeds.ac.uk
+	 <dt><b>David Milner</b> Department of Psychology, University of Durham, Durham, DH1 3LE, UK; email:&nbsp;a.d.milner@durham.ac.uk
+	 <dt><b>Michael Morgan</b> Applied Vision Research Centre, City University, London EC1V 0HB, UK; email:&nbsp;m.morgan@city.ac.uk
+
+	 <dt><b>Tony Movshon</b> Centre for Neural Science, New York University, New York NY 10003, USA; email:&nbsp;movshon@nyu.edu
+	 <dt><b>Kathy Mullen</b> McGill Vision Research, McGill University, Montr&eacute;al, Qu&eacute;bec H3A 1A1, Canada; email:&nbsp;kathy.mullen@mcgill.ca
+	 <dt><b>Fiona Newell</b> School of Psychology and Institute of Neuroscience,
+Trinity College, Dublin 2, Ireland; email:&nbsp;FNEWELL@tcd.ie
+
+	 <dt><b>Aude Oliva</b> Brain and Cognitive Sciences, Massachussetts Institute of Technology, Cambridge, MA 02139, USA; email:&nbsp;oliva@mit.edu
+
+</td><td align=left valign=top>		 
+	 <dt><b>Dennis Proffitt</b> Department of Psychology, University of Virginia, Charlottesville, VA 22903, USA; email:&nbsp;drp@virginia.edu
+	 <dt><b>Gillian Rhodes</b> School of Psychology, University of Western Australia, Crawley, WA 6007, Australia; email:&nbsp;gill@psy.uwa.edu.au
+	 <dt><b>Brian Rogers</b>, Department of Experimental Psychology, University of Oxford, Oxford OX1 3UD, UK; email:&nbsp;bjr@psy.ox.ac.uk
+	 <dt><b>Lothar Spillmann</b>, Brain Research Unit, Department of Anatomy, D&nbsp;79104 Freiburg, Germany; email:&nbsp;lothar.spillmann@zfn-brain.uni-freiburg.de
+	
+
+	 <dt><b>Nikolaus Troje</b> Department of Psychology, Queen's University, Kingston K7L 3N6, Ontario, Canada; email:&nbsp;troje@queensu.ca
+	 <dt><b>Christopher Tyler</b>, Smith-Kettlewell Eye Research Institute, San Francisco, CA 94115, USA; email:&nbsp;cwt.org
+	 <dt><b>Frans Verstraten</b> Helmholtz Institute, Universiteit Utrecht, NL-3584 CS Utrecht, The Netherlands; email:&nbsp;F.A.J.Verstraten@uu.nl
+	 <dt><b>Nick Wade</b>, Department of Psychology, University of Dundee, Dundee DD1 4HN, UK; email:&nbsp;n.j.wade.ac.uk
+	 <dt><b>Johan Wagemans</b> Laboratory of Experimental Psychology, Universiteit Leuven, B-3000 Leuven, Belgium; email:&nbsp;Johan.Wagemans@psy.kuleuven.be		 
+        <dt><b>John Wattam-Bell</b>, Department of Developmental Science, University College London, London WC1E 6BT, UK; email:&nbsp;j.wattam-bell@ucl.ac.uk	 
+	 <dt><b>Peter Wenderoth</b>, Department of Psychology, Macquarie University, North Ryde, NSW 2109, Australia; email:&nbsp;peter.wenderoth@mq.edu.au 
+	 </td>	
+
+
+
+<tr>
+<td colspan=4>Note that this editorial board is be shared by <nobr><i>i-Perception</i></nobr> and <i>Perception</i>.</td>
+	</tr>
+ </table></font>
+
+                                    </div>
+  
+                                    <a href="#" class="ask" onClick="show_div('faq04'); return false;">How much does it cost to submit to <nobr><i>i-Perception</i></nobr>?</a>
+                                    <div id="faq04" class="faq_item" style="display:none;">
+                                   <p>Papers in <i>i-Perception</i> are be freely accessible without subscription; the costs of publication are be paid by authors supported by their funding bodies or institutions. <i>i-Perception</i> is an Open Access/Author Pays journal.
+<p>If a paper is submitted according to <i>i-Perception</i> specifications (see How Can I Submit, above) it will normally be charged at &pound;50 (US$80) a printed page (by "printed page" we mean a page of the final published PDF version of the paper) but there is currently a special introductory rate of &pound;25 (US$40) for such papers. Papers not submitted to our specifications will be charged at &pound;70 (US$110) a page.  There is a minimum charge of &pound;200 (US$320) for any paper&#8212;&pound;100(US$160) if the author is eligible for the introductory rate.
+<p><b>i-Comment charges.</b> In order to fast-track the publication of i-Comments and their responses and to keep the author charges to a minimum, they receive minimal editing and proofs will not be sent to authors, so it is vital that authors submit in their final publication materials a polished, ready-to-publish version of their paper. Authors are asked to keep their papers short (no more than 1,500 words). For i-Comment papers there is no minimum charge (of £200), as with other <i>i-Perception</i> papers. Instead they are charged £50 per page.If authors of the paper being reviewed wish to respond but do not have funds to cover the publication fees, please consult the editors before submission.</p>
+
+
+<p>If, in the opinion of the reviewers, editors, or publishers it is felt that special editorial work is required on the language of the paper the authors will be given the option of having that work done themselves or having it carried out by the experienced editorial staff at Pion. In the latter case a further charge will be payable and an estimate for that charge will be given to the authors in advance.
+<br><br>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=3 CELLSPACING=0 FRA
+ME=ABOVE RULES=GROUPS STYLE="page-break-before: always">
+	<COL WIDTH=85*>
+	<COL WIDTH=43*>
+	<COL WIDTH=43*>
+	<COL WIDTH=43*>
+	<COL WIDTH=43*>
+	<THEAD>
+		<TR VALIGN=TOP>
+
+			<TH WIDTH=33%>
+				<P><BR>
+				</P>
+			</TH>
+			<TH COLSPAN=2 WIDTH=33%>
+				<P>Paper submitted to specification</P>
+			</TH>
+			<TH WIDTH=17%>
+
+				<P>Paper not to specification</P>
+			</TH>
+			<TH WIDTH=17%>
+				<P>Additional editing</P>
+			</TH>
+		</TR>
+		<TR VALIGN=TOP>
+			<TH WIDTH=33% HEIGHT=37>
+
+				<P><BR>
+				</P>
+			</TH>
+			<TH WIDTH=17% BGCOLOR="#83caff">
+				<P>Introductory charge</P>
+			</TH>
+			<TH WIDTH=17%>
+				<P>Standard charge</P>
+
+			</TH>
+			<TH WIDTH=17%>
+				<P>Standard charge</P>
+			</TH>
+			<TH WIDTH=17%>
+				<P><BR>
+				</P>
+			</TH>
+
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR VALIGN=TOP>
+			<TD WIDTH=33%>
+				<P>Charge per page</P>
+			</TD>
+			<TD WIDTH=17% BGCOLOR="#83caff">
+
+				<P>&pound;25 (US$40)</P>
+			</TD>
+			<TD WIDTH=17%>
+				<P>&pound;50 (US$80)</P>
+			</TD>
+			<TD WIDTH=17%>
+				<P>&pound;70 (US$110)</P>
+
+			</TD>
+			<TD ROWSPAN=2 WIDTH=17%>
+				<P>To be advised in each case</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=33%>
+				<P>Minimum charge</P>
+
+			</TD>
+			<TD WIDTH=17% BGCOLOR="#83caff">
+				<P>&pound;100 (US$160)</P>
+			</TD>
+			<TD WIDTH=17%>
+				<P>&pound;200 (US$320)</P>
+			</TD>
+			<TD WIDTH=17%>
+
+				<P>&pound;300 (US$480)</P>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+
+
+<p>Where the submitting author is based within the European Union these charges will be subject to the appropriate level of UK value-added tax (VAT), currently 20% (January 2010). Payment will be invoiced at the time of publication.
+
+                                    </div>
+                                    <a href="#" class="ask" onClick="show_div('faq05'); return false;">Who publishes <nobr><i>i-Perception</i></nobr>?</a>
+                                    <div id="faq05" class="faq_item" style="display:none;">
+                                        <p><nobr><i>i-Perception</i></nobr> is published by Pion Ltd, the publishers of <i>Perception</i>. Pion Ltd is an independent publishing house based in London. We have been publishing academic journals for fifty years.</p>
+                                    </div>
+                                    <a href="#" class="ask" onClick="show_div('faq06'); return false;">Will <nobr><i>i-Perception</i></nobr> articles be submitted to PubMed etc.?</a>
+                                    <div id="faq06" class="faq_item" style="display:none;">
+                                        <p>Though some academic journals publish freely available material, they do not always meet the criteria to qualify for open access funding from certain grant-awarding bodies. For example, they might not deposit the final manuscripts in certain databases, such as PMC/UKPMC. It is the intention of <nobr><i>i-Perception</i></nobr> to meet such criteria, once any incubation periods imposed by such databases have been served, which may take some time.</p>
+                                    </div>
+                                    <a href="#" class="ask" onClick="show_div('faq07'); return false;">Who owns the copyright to <nobr><i>i-Perception</i></nobr> articles?</a>
+                                    <div id="faq07" class="faq_item" style="display:none;">
+                                        Unlike many other journals, including some open-access journals, copyright of <nobr><i>i-Perception</i></nobr> articles remains with the authors. Authors are asked to license Pion to publish their paper under a <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons noncommercial, nonderivative (CC-nc-nd) licence</a>.
+
+                                    </div>
+                                    <a href="#" class="ask" onClick="show_div('faq08'); return false;">How can I keep notified of <nobr><i>i-Perception</i></nobr> content or news?</a>
+                                    <div id="faq08" class="faq_item" style="display:none;">
+                                        <p>Interested readers will be able to subscribe to an RSS feed for <nobr><i>i-Perception</i></nobr>, and an email alerting service is also in operation. Sign up now to the alerting service to keep up to date with the latest developments relating to <nobr><i>i-Perception</i></nobr>.</p>
+                                    </div>
+                                    <a href="#" class="ask" onClick="show_div('faq09'); return false;">What security do I have that my article will always be available?</a>
+                                    <div id="faq09" class="faq_item" style="display:none;">
+                                        One concern which some authors have regarding online-only journals is that there may be no lasting record of their article should any misfortune befall the journal or publisher. In order to give authors confidence that there will be perpetual access to <nobr><i>i-Perception</i></nobr> papers, all papers are being archived by the <a href='http://www.clockss.org/'>CLOCKSS</a> permanent archiving service for scholarly literature. Also, it is anticipated that full XML content of all articles will be deposited with PubMed Central, once we have completed PubMed's required probationary period for new journals.
+
+                                    </div>
+                                    <a href="#" class="ask" onClick="show_div('faq10'); return false;">Is it easy to cross-reference an <nobr><i>i-Perception</i></nobr> article and use bookmarking tools?</a>
+                                    <div id="faq10" class="faq_item" style="display:none;">
+                                        <p>All articles published in <nobr><i>i-Perception</i></nobr> are registered with <a href="http://www.crossref.org/">CrossRef</a>, and will receive a DOI (Digital Object Identifier) for ease of cross referencing. We will also provide the necessary online tools for reference bookmarking. </p>
+                                    </div>
+
+                                    <a href="#" class="ask" onClick="show_div('faq11'); return false;">Sign up for email alerts</a> 
+                                    <div id="faq11" class="faq_item" style="display:none;">
+                                        <h4>Register for the <i>i-Perception</i> alerting service</h4><br />
+                                        <p>If you would like to be kept informed regarding the latest developments with <i>i-Perception</i>, and to be notified when new content is published, please enter and confirm your email address in the boxes provided below.</p>
+                                        <p>Your email will not be divulged to any third parties and will only be used to send occasional alerts relating to <i>i-Perception</i> developments or new content. You can unsubscribe at any point by clicking on the link provided in the alert emails.</p>
+                                        <br />
+                                        <form method="post" action="http://i-perception.perceptionweb.com/alertregister.cgi?journal=I" enctype="multipart/form-data">
+                                            Enter email address: <br><input name="email" size="50" type="text"><br>
+                                            Confirm email address: <br><input name="emailconf" size="50" type="text"><input name="journal" value="I" type="hidden"><br />
+                                            <br />
+                                            <p><b>Note: Before clicking Submit, please ensure that any spam filtering on your system is set to accept email from pion.co.uk.</b></p>
+                                            <p><input name="Submit" value="Submit" type="submit"></p>
+                                        </form>
+                                    </div>
+                                    <a href="http://www.perceptionweb.com/" class="ask">Visit the <img src="http://www.perceptionweb.com/i-perception/Images/perception.png" alt="perception" align="bottom"> website</a>
+                                </div>
+                            </div>
+                            <img src="/stylesheets/images/pionlogo2.png">a <a href="http://www.pion.co.uk">Pion</a> publication
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sidebar-right" class="sidebar">
+            <div id="block-user-1" class="clear-block block block-user">
+                <span id="scrollmenu" style="position:absolute">
+                    [% PROCESS templates/_resources.tmpl %]
+                    [% PROCESS templates/_journals.tmpl %]
+
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

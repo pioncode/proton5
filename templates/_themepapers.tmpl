@@ -1,0 +1,53 @@
+[% FOREACH item_p IN papers %]
+    <div class="clear-block">
+    [% SWITCH item_p.ptype %]
+       [% CASE '16' %]  [% colortype = 'colortype16' %]
+        [% CASE '17' %]  [% colortype = 'colortype17' %]
+        [% CASE '0' %] [% colortype = 'colortype0' %]
+        [% CASE '1' %] [% colortype = 'colortype17' %]
+    [% END %]
+ <!--   <div class="background-[% colortype %]">
+    <p class="paper-background">-->
+        [% IF item_p.imageurl %]
+            <a href="/journal/[% item_p.journal %]/volume/[% item_p.volume %]/article/[% item_p.paperid %]"><img class="iconfloat" align="left" src="[% item_p.imageurl %]" width="64" height="64"></a>
+        [% END %]
+
+      <!-- <a href="/journal/[% item_p.journal %]/volume/[% item_p.volume %]/article/[% item_p.paperid %]">-->
+        [% SWITCH item_p.ptype %]
+        [%  CASE '0' %]
+            [% IF current.journal ==  'I' %]  <a href="/journal/[% item_p.journal %]/volume/[% item_p.volume %]/article/[% item_p.paperid %]"><img  width="96" height="96" src="/fulltext/[% item_p.journal | lower %][% item_p.volume.replace('^(\d)$', '0$1') %]/[% item_p.paperid %].png" class="iconfloat"/> </a> [% END %]    <div class="background-[% colortype %]">
+    <p class="paper-background"></p>
+        [%  CASE '1' %]
+             [% IF current.journal ==  'I' %]     <a href="/journal/[% item_p.journal %]/volume/[% item_p.volume %]/article/[% item_p.paperid %]"><img  width="96" height="96" src="/standard-icons/standard-5.png" class="iconfloat"/></a> [% END %]
+              <div class="background-[% colortype %]">
+    <p class="paper-background"> <b>Guest editorial</b></p>
+        [%  CASE '5' %]
+            [% IF current.journal ==  'I' %]     <a href="/journal/[% item_p.journal %]/volume/[% item_p.volume %]/article/[% item_p.paperid %]"><img  width="96" height="96" src="/standard-icons/standard-5.png" class="iconfloat"/></a> [% END %]
+               <div class="background-[% colortype %]">
+    <p class="paper-background"><b>Editorial</b></p>
+        [%  CASE '10' %]
+               <div class="background-[% colortype %]">
+    <p class="paper-background"><b>Last but not least</b></p>
+        [%  CASE '16' %]
+            [% IF current.journal ==  'I' %]     <a href="/journal/[% item_p.journal %]/volume/[% item_p.volume %]/article/[% item_p.paperid %]"><img  width="96" height="96" src="/standard-icons/standard-16.png" class="iconfloat"/></a> [% END %]
+               <div class="background-[% colortype %]">
+    <p class="paper-background"><b> Short and Sweet</b></p>
+        [%  CASE '17' %]
+            [% IF current.journal ==  'I' %]     <a href="/journal/[% item_p.journal %]/volume/[% item_p.volume %]/article/[% item_p.paperid %]"><img  width="96" height="96" src="/standard-icons/standard-5.png" class="iconfloat"/></a> [% END %]
+               <div class="background-[% colortype %]">
+    <p class="paper-background"><b>Editorial announcement</b></p>
+        [% END %]
+  
+        <div class="title-auth-block"> 
+        <a href="/journal/[% item_p.journal %]/volume/[% item_p.volume %]/article/[% item_p.paperid %]"><b>[% item_p.title FILTER html %]</b></a>
+       
+        <br />
+        [% FOREACH item_a IN item_p.authors %]
+            [% item_a.first_name %] [% item_a.last_name %][% ", " IF NOT loop.last %]
+        [% END %]
+        <br />
+<!--         TODO: Create direct PDF link -->
+       </div>
+       </div>
+    </div>
+[% END %]
