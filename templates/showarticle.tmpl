@@ -153,7 +153,7 @@
                                 [% IF article.received %]
                                     <p class="ref"><b>History:</b> [% article.received %]</p>
                                 [% END %]
-				[% IF ! article.talk_id %]
+				[% IF ( (! article.talk_id) || article.ptype=='0' || article.ptype=='1' || article.ptype=='2' || article.ptype=='3' || article.ptype=='5' || article.ptype=='9' || article.ptype=='16' || article.ptype=='18' || article.ptype=='19') %]
                                 <p class="ref"><b>DOI:</b> <a href="http://dx.doi.org/[% article.doi %]">[% article.doi %]</a></p>
 				[% END %]
                                 <p class="ref"><b>ISSN:</b> 2041-6695 (electronic only)</p>
