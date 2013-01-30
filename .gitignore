@@ -1,0 +1,15 @@
+*~
+*_
+Images
+*.doc
+*.pdf
+admin
+posters/
+*.ico
+misc
+fulltext
+*DS_Store
+*.swp
+templates/*
+stylesheets/*
+standard-icons/*
