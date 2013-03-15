@@ -494,9 +494,20 @@ sub _get_article {
     $article->{'paperid'} =~ s/\s+$//xm;
 
     # get authors
-    $article->{'authors'} = $self->_get_authors( $article->{'paperid'} );
+    $article->{'authors'}    = $self->_get_authors( $article->{'paperid'} );
+    # get DOI
+    my $doi_type = $self->_get_doi( $article->{'papertype'}, $article->{'paperid'} );
+    # get Authors
+    $article->{'authors'}    = $self->_get_authors( $article->{'paperid'} );
+    
 
     return $article;
+}
+
+sub _get_doi {
+    my ( $self, $paper_type,$paper_id ) = @_;
+    my $sql = 'SELECT * FROM display_doi WHERE ptype=? || papertype=? ';
+    return $self->dbh->selectall_arrayref( $sql, { Slice => {} }, $paper_id ) or die "Problem with database!\n";
 }
 
 sub _get_authors {
